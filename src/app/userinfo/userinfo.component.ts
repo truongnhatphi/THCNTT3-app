@@ -46,9 +46,5 @@ export class UserinfoComponent implements OnInit {
       document.getElementById('chay').innerHTML=canhbao;
         });
   }
-  updatevalue()
-  {
-    location.href = "contact";
-  }
-
+  
 }
