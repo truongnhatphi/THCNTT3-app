@@ -1,0 +1,24 @@
+<table>
+    <tr>
+       <td><b>ID :</b></td>
+       <td>&nbsp;{{test[0].id}} </td>
+    </tr>
+    <tr>
+        <td><b>Name :</b></td>
+        <td>&nbsp;{{test[0].name}} </td>
+    </tr>
+    <tr>
+        <td><b>Address :</b></td>
+        <td>&nbsp;{{test[0].address}} </td>
+    </tr>
+    <tr>
+        <td><b>Phone :</b></td>
+        <td>&nbsp;{{test[0].phone}} </td>
+    </tr>
+    <input type="button" (click)="updatevalue()" value="Thay Đổi Thông Tin Cá Nhân">
+    <input type="button" (click)="authsv.SignOut()" value="Sign Out">
+</table>
+
+<input type="button" (click)="getdatastatus()" value="Kiểm tra trạng thái trực tiếp">
+<div><b>Tình Trạng Đột Nhập :</b></div><div id="dotnhap"></div>
+<div><b>Tình Trạng Hỏa Hoạn :</b></div><div id="chay"></div>
