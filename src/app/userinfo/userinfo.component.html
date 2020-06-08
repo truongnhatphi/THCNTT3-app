@@ -15,9 +15,33 @@
         <td><b>Phone :</b></td>
         <td>&nbsp;{{test[0].phone}} </td>
     </tr>
+    <input type="button" (click)="xemtinhtrang()" value="Check">
     <input type="button" (click)="authsv.SignOut()" value="Sign Out">
 </table>
+<div *ngIf="StateOfStatus" id="status" >
+    <table id="status">
+        
+        <tr>
+            <td>
+                <div>Tình Trạng Đột Nhập:</div>
+            </td>
+            <td>
+                <div id = "dotnhap"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>Trình Trạng Cháy :</div>
+            </td>
+            <td>
+                <div id = "chay"></div>
+            </td>
+        </tr>
+        <tr>
+            <input type="button" (click)="getdatastatus()" value="Xem Tình Trạng Trực Tiếp">
+            <input type="button" (click)="hidestatus()" value="Đóng">
+        </tr>
+        
+    </table>
+</div>
 
-<input type="button" (click)="getdatastatus()" value="Kiểm tra trạng thái trực tiếp">
-<div><b>Tình Trạng Đột Nhập :</b></div><div id="dotnhap"></div>
-<div><b>Tình Trạng Hỏa Hoạn :</b></div><div id="chay"></div>

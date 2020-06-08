@@ -18,7 +18,9 @@ export class UserinfoComponent implements OnInit {
   adValue:string;
   nameValue: string;
   phoneValue:string;
+  StateOfStatus : boolean  = false;
   public test : Array<User>;
+  
   constructor(public afs: AngularFirestore,public authsv : AuthService,public router : Router) {
     this.itemsCollection = afs.collection<User>('User');
     this.items = this.itemsCollection.valueChanges( );
@@ -32,6 +34,14 @@ export class UserinfoComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+  xemtinhtrang()
+  {
+    this.StateOfStatus = true;
+  }
+  hidestatus()
+  {
+    this.StateOfStatus = false;
   }
   getdatastatus()
   {

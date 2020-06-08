@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public authsv : AngularFireAuth) { }
+  constructor(public authsv : AngularFireAuth,public router : Router) { }
   email: string;
   password:string;
   ngOnInit(): void {
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     return this.authsv.signInWithEmailAndPassword(this.email, this.password)
       .then((result) => {
         console.log(result);
-        location.href="userinfo";
+        this.router.navigate(['/userinfo',{tags: '%one,%two'}]);
 
       }).catch((error) => {
         alert ("Sai ID hoặc Password !");

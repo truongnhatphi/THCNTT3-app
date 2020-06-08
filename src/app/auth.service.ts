@@ -15,7 +15,7 @@ export class AuthService {
     this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(user=>{
       this.currentuser = user.user;
       console.log(user);
-      this.router.navigate(['userinfo']);
+      this.router.navigate(['userinfo',{tags: 'one,two'}]);
     }).catch(error => {
       console.log("Some thing wrong!");
     })
@@ -23,14 +23,14 @@ export class AuthService {
   
   quanly()
   {
-    location.href="management";
+    this.router.navigate(['/management',{tags: 'one,two'}]);
   }
   
   
   SignOut()
   {
     this.auth.signOut().then(()=> {
-      location.href ="login";
+      this.router.navigate(['/login',{tags: 'one,two'}]);
     })
   }
   
